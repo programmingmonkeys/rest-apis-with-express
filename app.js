@@ -4,6 +4,8 @@ const app = express()
 
 const records = require('./records')
 
+app.use(express.json())
+
 // Send a GET request to /quotes to READ a list of quotes
 app.get('/quotes', async (req, res) => {
   const quotes = await records.getQuotes()
@@ -17,6 +19,14 @@ app.get('/quotes/:id', async (req, res) => {
 })
 
 // Send a POST request to /quotes to  CREATE a new quote
+app.post('/quotes', async (req, res) => {
+  const quote = await records.createQuote({
+    quote: req.body.quote,
+    author: req.body.author,
+  })
+  res.json(quote)
+})
+
 // Send a PUT request to /quotes/:id to UPDATE (edit) a quote
 // Send a DELETE request to /quotes/:id DELETE a quote
 // Send a GET request to /quotes/quote/random to READ (view) a random quote
