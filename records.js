@@ -39,7 +39,7 @@ function getQuotes() {
  */
 async function getQuote(id) {
   const quotes = await getQuotes()
-  return quotes.records.find((record) => record.id === id)
+  return quotes.records.find((record) => record.id == id)
 }
 /**
  * Gets a random quote
@@ -70,7 +70,7 @@ async function createQuote(newRecord) {
  */
 async function updateQuote(newQuote) {
   const quotes = await getQuotes()
-  const quote = quotes.records.find((item) => item.id === newQuote.id)
+  const quote = quotes.records.find((item) => item.id == newQuote.id)
 
   quote.quote = newQuote.quote
   quote.author = newQuote.author
@@ -85,7 +85,7 @@ async function updateQuote(newQuote) {
  */
 async function deleteQuote(record) {
   const quotes = await getQuotes()
-  quotes.records = quotes.records.filter((item) => item.id !== record.id)
+  quotes.records = quotes.records.filter((item) => item.id != record.id)
   await save(quotes)
 }
 
