@@ -60,7 +60,19 @@ app.put('/quotes/:id', async (req, res) => {
     return res.status(500).json({ message: err.message })
   }
 })
+
 // Send a DELETE request to /quotes/:id DELETE a quote
+app.delete('/quotes/:id', async (req, res, next) => {
+  try {
+    const quote = await records.getQuote(req.params.id)
+    await records.deleteQuote(quote)
+
+    res.status(204).end()
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
+})
+
 // Send a GET request to /quotes/quote/random to READ (view) a random quote
 
 app.listen(3000, () => console.log('Quote API listening on port 3000!'))

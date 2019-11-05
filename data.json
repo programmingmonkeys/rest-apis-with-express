@@ -3,7 +3,7 @@
     {
       "id": 8721,
       "quote": "We must accept finite disappointment, but we must never lose infinite hope.",
-      "author": "Martin Luther King Jr"
+      "author": "Martin Luther King, Jr."
     },
     {
       "id": 5779,
@@ -16,9 +16,24 @@
       "author": "Barbara DeAngelis"
     },
     {
-      "quote": "I'm pooted",
-      "author": "baby",
-      "id": 1981
+      "quote": "There's no place like home",
+      "author": "Dorothy",
+      "id": 1492
+    },
+    {
+      "quote": "There's no place like home",
+      "author": "Dorothy",
+      "id": 1976
+    },
+    {
+      "quote": "There's no place like home",
+      "author": "Dorothy",
+      "id": 4132
+    },
+    {
+      "quote": "There's no place like home",
+      "author": "Dorothy",
+      "id": 1498
     }
   ]
 }
